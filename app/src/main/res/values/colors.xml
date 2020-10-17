@@ -6,4 +6,5 @@
     <color name="background_color">#FFFFFF</color>
     <color name="border_color">#993333</color>
     <color name="colorText">#1e497d</color>
+    <color name="historyColorBtn">#000000</color>
 </resources>
