@@ -5,7 +5,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.widget.TextView;
-import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -13,11 +12,13 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        final TextView txtView=(TextView)findViewById(R.id.textView);
+        final TextView txtView=(TextView)findViewById(R.id.assign);
+        final TextView assign = (TextView)findViewById(R.id.sales);
     }
     public void onConfigurationChanged(Configuration newConfig) {
         super.onConfigurationChanged(newConfig);
-        final TextView txtView=(TextView)findViewById(R.id.textView);
+        final TextView txtView=(TextView)findViewById(R.id.assign);
+        final TextView assign = (TextView)findViewById(R.id.sales);
 //        if (newConfig.orientation == Configuration.ORIENTATION_LANDSCAPE) {
 //            txtView.setText(txtView.getText() + " landscape");
 //            Toast.makeText(this, "landscape", Toast.LENGTH_SHORT).show();
