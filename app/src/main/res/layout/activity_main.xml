@@ -13,35 +13,28 @@
         android:gravity="center">
 
 
-
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_margin="10dp"
             android:gravity="center"
             android:orientation="horizontal">
 
-            <LinearLayout
+            <TextView
+                android:id="@+id/assign"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:orientation="horizontal">
+                android:gravity="center"
+                android:text="@string/assign1"
+                android:textColor="@color/colorText" />
 
-                <TextView
-                    android:id="@+id/assign"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:text="@string/assign1"
-                    android:textColor="@color/colorText" />
-
-                <ImageView
-                    android:id="@+id/imageView"
-                    android:layout_width="97dp"
-                    android:layout_height="46dp"
-                    android:layout_weight="1"
-                    app:srcCompat="@drawable/history" />
-            </LinearLayout>
+            <ImageView
+                android:id="@+id/historyBtn"
+                android:layout_width="74dp"
+                android:layout_height="37dp"
+                android:layout_weight="1"
+                app:srcCompat="@drawable/history" />
 
         </LinearLayout>
 
@@ -63,7 +56,7 @@
                 android:textColor="@color/colorText" />
 
             <EditText
-                android:id="@+id/editTextTextPersonName6"
+                android:id="@+id/inputSales"
                 android:layout_width="20dp"
                 android:layout_height="40dp"
                 android:layout_weight="1"
@@ -90,7 +83,7 @@
                 android:textColor="@color/colorText" />
 
             <EditText
-                android:id="@+id/editTextTextPersonName7"
+                android:id="@+id/inputSharePercentage"
                 android:layout_width="20dp"
                 android:layout_height="40dp"
                 android:layout_weight="1"
@@ -108,7 +101,7 @@
             android:layout_margin="10dp">
 
             <TextView
-                android:id="@+id/textView10"
+                android:id="@+id/salesMinusShare"
                 android:layout_width="20dp"
                 android:layout_height="40dp"
                 android:layout_weight="1"
@@ -117,7 +110,7 @@
                 android:textColor="@color/colorText" />
 
             <EditText
-                android:id="@+id/editTextTextPersonName8"
+                android:id="@+id/inputSalesMinusShare"
                 android:layout_width="20dp"
                 android:layout_height="40dp"
                 android:layout_weight="1"
@@ -145,7 +138,7 @@
                 android:textColor="@color/colorText" />
 
             <EditText
-                android:id="@+id/editTextTextPersonName9"
+                android:id="@+id/inputSalesShare"
                 android:layout_width="20dp"
                 android:layout_height="40dp"
                 android:layout_weight="1"
@@ -157,20 +150,20 @@
         </LinearLayout>
 
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
+            android:layout_margin="10dp"
             android:gravity="center"
-            android:layout_margin="10dp">
+            android:orientation="horizontal">
 
             <Button
-                android:id="@+id/button4"
+                android:id="@+id/calBtn"
                 android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:layout_weight="0"
                 android:background="@drawable/my_border"
-                android:textColor="@color/colorText"
-                android:text="@string/calBtn" />
+                android:text="@string/calBtn"
+                android:textColor="@color/colorText" />
         </LinearLayout>
 
     </LinearLayout>
