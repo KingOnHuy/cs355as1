@@ -32,7 +32,6 @@ public class MainActivity extends AppCompatActivity {
         final ImageButton historyBtn = (ImageButton) findViewById(R.id.historyBtn);
 
         dbManager = new DBManager(this);
-        dbManager.open();
 
         TelephonyManager tel = (TelephonyManager) getSystemService(Context.TELEPHONY_SERVICE);
         String networkOperator = tel.getNetworkOperator();
@@ -86,7 +85,10 @@ public class MainActivity extends AppCompatActivity {
                         saleMi.setText(String.valueOf(salesMinus));
                         saleSha.setText(String.valueOf(saleShare));
 //                        insert(int sales, double sharePercentage, int salesMinusShare, int salesShare)
+
+                        dbManager.open();
                         dbManager.insert((int) numSale, numSharePer ,salesMinus, saleShare);
+                        dbManager.close();
                     }
                 } else {
                     Toast.makeText(getApplicationContext(),"Plz, input", Toast.LENGTH_SHORT).show();
