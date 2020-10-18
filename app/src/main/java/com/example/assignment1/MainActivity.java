@@ -3,6 +3,7 @@ package com.example.assignment1;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.telephony.TelephonyManager;
@@ -56,6 +57,12 @@ public class MainActivity extends AppCompatActivity {
             }
             historyBtn.setColorFilter(getResources().getColor(temp));
         }
+        historyBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this, HistoryActivity.class));
+            }
+        });
         final Button calBth = (Button)findViewById(R.id.calBtn) ;
         calBth.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -78,6 +85,7 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
+
     }
     @Override
     //change font size follow device

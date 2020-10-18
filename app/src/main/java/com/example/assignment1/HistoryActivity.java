@@ -12,12 +12,4 @@ public class HistoryActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_history);
     }
-    @Override
-    //change font size follow device
-    public void onConfigurationChanged(Configuration newConfig) {
-        super.onConfigurationChanged(newConfig);
-        final TextView txtView=(TextView)findViewById(R.id.assign2);
-
-        txtView.setTextSize(newConfig.fontScale*32);
-    }
 }
