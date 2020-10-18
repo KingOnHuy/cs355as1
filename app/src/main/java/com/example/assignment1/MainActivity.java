@@ -12,6 +12,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
     public static final String PREFS_NAME = "MyPrefsFile";
@@ -59,22 +60,26 @@ public class MainActivity extends AppCompatActivity {
         calBth.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                double num1 = Double.parseDouble(sale.getText().toString());
-                double num2 = Double.parseDouble(sharePer.getText().toString());
-                int salesMinus = (int) (num1*(((100-num2))/100));
-                int saleShare = (int) num1-salesMinus;
-                saleMi.setText(String.valueOf(salesMinus));
-                saleSha.setText(String.valueOf(saleShare));
+                double numSale = 0;
+                double numSharePer = 0;
+                if (!sale.getText().toString().equals("") && !sharePer.getText().toString().equals("")) {
+                    numSale = Double.parseDouble(sale.getText().toString());
+                    numSharePer = Double.parseDouble(sharePer.getText().toString());
+                    int salesMinus = (int) (numSale * (((100 - numSharePer)) / 100));
+                    int saleShare = (int) numSale - salesMinus;
+                    saleMi.setText(String.valueOf(salesMinus));
+                    saleSha.setText(String.valueOf(saleShare));
+                } else {
+                    Toast.makeText(getApplicationContext(),"Plz, input", Toast.LENGTH_SHORT).show();
+                }
             }
         });
-
     }
     @Override
     //change font size follow device
     public void onConfigurationChanged(Configuration newConfig) {
         super.onConfigurationChanged(newConfig);
-        final TextView txtView=(TextView)findViewById(R.id.assign);
-
-        txtView.setTextSize(newConfig.fontScale*32);
+//        final TextView txtView=(TextView)findViewById(R.id.assign);
+//        txtView.setTextSize(newConfig.fontScale*32);
     }
 }
