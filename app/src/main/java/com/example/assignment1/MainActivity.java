@@ -15,8 +15,11 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
+//https://www.journaldev.com/9438/android-sqlite-database-example-tutorial
+
 public class MainActivity extends AppCompatActivity {
     public static final String PREFS_NAME = "MyPrefsFile";
+    private DBManager dbManager;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,6 +30,9 @@ public class MainActivity extends AppCompatActivity {
         final EditText saleMi = (EditText) findViewById(R.id.inputSalesMinusShare);
         final EditText saleSha = (EditText) findViewById(R.id.inputSalesShare);
         final ImageButton historyBtn = (ImageButton) findViewById(R.id.historyBtn);
+
+        dbManager = new DBManager(this);
+        dbManager.open();
 
         TelephonyManager tel = (TelephonyManager) getSystemService(Context.TELEPHONY_SERVICE);
         String networkOperator = tel.getNetworkOperator();
@@ -79,6 +85,8 @@ public class MainActivity extends AppCompatActivity {
                         int saleShare = (int) numSale - salesMinus;
                         saleMi.setText(String.valueOf(salesMinus));
                         saleSha.setText(String.valueOf(saleShare));
+//                        insert(int sales, double sharePercentage, int salesMinusShare, int salesShare)
+                        dbManager.insert((int) numSale, numSharePer ,salesMinus, saleShare);
                     }
                 } else {
                     Toast.makeText(getApplicationContext(),"Plz, input", Toast.LENGTH_SHORT).show();

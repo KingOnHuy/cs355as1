@@ -6,4 +6,5 @@
     <string name="sharePercen">Share percentage</string>
     <string name="salesMinusShare">Sales Minus Share</string>
     <string name="salesShare">Sales share</string>
+    <string name="empty_list_text">Nothing here.</string>
 </resources>
