@@ -17,13 +17,7 @@ public class HistoryActivity extends AppCompatActivity {
     public void onConfigurationChanged(Configuration newConfig) {
         super.onConfigurationChanged(newConfig);
         final TextView txtView=(TextView)findViewById(R.id.assign2);
-//        if (newConfig.orientation == Configuration.ORIENTATION_LANDSCAPE) {
-//            txtView.setText(txtView.getText() + " landscape");
-//            Toast.makeText(this, "landscape", Toast.LENGTH_SHORT).show();
-//        } else if (newConfig.orientation == Configuration.ORIENTATION_PORTRAIT){
-//            txtView.setText(txtView.getText() + " portrait");
-//            Toast.makeText(this, "portrait", Toast.LENGTH_SHORT).show();
-//        }
+
         txtView.setTextSize(newConfig.fontScale*32);
     }
 }

@@ -7,4 +7,8 @@
     <color name="border_color">#993333</color>
     <color name="colorText">#1e497d</color>
     <color name="historyColorBtn">#000000</color>
+    <color name="cat">#ffbf00</color>
+    <color name="aisLine">#00ff0d</color>
+    <color name="dtac">#006EFF</color>
+    <color name="trueM">#FF0000</color>
 </resources>
