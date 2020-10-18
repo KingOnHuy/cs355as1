@@ -65,10 +65,14 @@ public class MainActivity extends AppCompatActivity {
                 if (!sale.getText().toString().equals("") && !sharePer.getText().toString().equals("")) {
                     numSale = Double.parseDouble(sale.getText().toString());
                     numSharePer = Double.parseDouble(sharePer.getText().toString());
-                    int salesMinus = (int) (numSale * (((100 - numSharePer)) / 100));
-                    int saleShare = (int) numSale - salesMinus;
-                    saleMi.setText(String.valueOf(salesMinus));
-                    saleSha.setText(String.valueOf(saleShare));
+                    if (numSharePer > 100) {
+                        Toast.makeText(getApplicationContext(),"Nani???, percentage > 100", Toast.LENGTH_SHORT).show();
+                    } else {
+                        int salesMinus = (int) (numSale * (((100 - numSharePer)) / 100));
+                        int saleShare = (int) numSale - salesMinus;
+                        saleMi.setText(String.valueOf(salesMinus));
+                        saleSha.setText(String.valueOf(saleShare));
+                    }
                 } else {
                     Toast.makeText(getApplicationContext(),"Plz, input", Toast.LENGTH_SHORT).show();
                 }
