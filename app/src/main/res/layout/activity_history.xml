@@ -9,21 +9,54 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:gravity="center"
-        android:orientation="vertical"
-        tools:layout_editor_absoluteX="1dp"
-        tools:layout_editor_absoluteY="1dp">
+        android:orientation="vertical">
 
         <TextView
-            android:id="@+id/AppName"
+            android:id="@+id/assign2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="@string/app_name" />
+            android:text="@string/assign1"
+            android:textColor="@color/colorText"/>
 
-        <ListView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
 
+            <TextView
+                android:id="@+id/sales2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/sales"
+                android:textColor="@color/colorText"/>
+
+            <TextView
+                android:id="@+id/sharePercen2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/sharePercen"
+                android:textColor="@color/colorText"/>
+
+            <TextView
+                android:id="@+id/salesMinusShare2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/salesMinusShare"
+                android:textColor="@color/colorText"/>
+
+            <TextView
+                android:id="@+id/salesShare2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/salesShare"
+                android:textColor="@color/colorText"/>
+
+        </LinearLayout>
     </LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
