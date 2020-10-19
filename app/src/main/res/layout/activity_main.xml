@@ -35,9 +35,9 @@
                 android:layout_height="50dp"
                 android:layout_gravity="center"
                 android:layout_weight="1"
+                android:background="#00FFFFFF"
                 android:padding="0dp"
                 android:scaleType="fitCenter"
-                android:background="@drawable/my_border"
                 android:tint="@color/historyColorBtn"
                 app:srcCompat="@drawable/history" />
 
@@ -180,7 +180,6 @@
                 android:layout_weight="0"
                 android:background="@drawable/my_border"
                 android:text="@string/calBtn"
-                android:onClick="showMessage"
                 android:textColor="@color/colorText" />
         </LinearLayout>
 
