@@ -58,7 +58,7 @@ public class MainActivity extends AppCompatActivity {
                     temp = R.color.dtac;
                     break;
                 default:
-                    temp = 0;
+                    temp = R.color.historyColorBtn;
             }
             historyBtn.setColorFilter(getResources().getColor(temp));
         }
