@@ -41,26 +41,7 @@ public class MainActivity extends AppCompatActivity {
 
             txtAppName.setText(txtAppName.getText() + " MCC-" + mcc + " MNC-" + mnc + " RAW-" + networkOperator);
             int temp = 0;
-            switch (mnc) {
-                case 0:
-                    temp = R.color.cat;
-                    break;
-                case 3:
-                case 15:
-                    temp = R.color.aisLine;
-                    break;
-                case 4:
-                    temp = R.color.trueM;
-                    break;
-                case 5:
-                case 18:
-                case 47:
-                    temp = R.color.dtac;
-                    break;
-                default:
-                    temp = R.color.historyColorBtn;
-            }
-            historyBtn.setColorFilter(getResources().getColor(temp));
+            setColorOfBtnViaNetwork(mnc);
         }
         historyBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -101,7 +82,33 @@ public class MainActivity extends AppCompatActivity {
     //change font size follow device
     public void onConfigurationChanged(Configuration newConfig) {
         super.onConfigurationChanged(newConfig);
-//        final TextView txtView=(TextView)findViewById(R.id.assign);
-//        txtView.setTextSize(newConfig.fontScale*32);
+        final TextView headTxt=(TextView)findViewById(R.id.assign);
+        headTxt.setText("Network had change: MCC:" + newConfig.mcc + " MNC:" + newConfig.mnc);
+        setColorOfBtnViaNetwork(newConfig.mnc);
+    }
+
+    private void setColorOfBtnViaNetwork(int mnc) {
+        final ImageButton historyBtn = (ImageButton) findViewById(R.id.historyBtn);
+        int temp = 0;
+        switch (mnc) {
+            case 0:
+                temp = R.color.cat;
+                break;
+            case 3:
+            case 15:
+                temp = R.color.aisLine;
+                break;
+            case 4:
+                temp = R.color.trueM;
+                break;
+            case 5:
+            case 18:
+            case 47:
+                temp = R.color.dtac;
+                break;
+            default:
+                temp = R.color.historyColorBtn;
+        }
+        historyBtn.setColorFilter(getResources().getColor(temp));
     }
 }
